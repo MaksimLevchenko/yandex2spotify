@@ -7,3 +7,4 @@ venv/
 *.pyc
 
 .cache*
+/progress.json
