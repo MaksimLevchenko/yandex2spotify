@@ -1,0 +1,12 @@
+REDIRECT_URI = 'https://open.spotify.com'
+MAX_REQUEST_RETRIES = 5
+
+PROGRESS_FILE = 'progress.json'
+PROGRESS_SCHEMA_VERSION = 2
+PROGRESS_FLUSH_EVERY = 10
+
+NOT_FOUND_JSON_FILE = 'not_found_tracks.json'
+NOT_FOUND_TXT_FILE = 'not_found_tracks.txt'
+
+FLUSH_SPOTIFY_BATCH = 20
+FLUSH_SPOTIFY_LIBRARY_BATCH = 10
