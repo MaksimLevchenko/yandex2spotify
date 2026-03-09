@@ -16,19 +16,30 @@ pip3 install -r requirements.txt
 
 1) Obtain a Yandex.Music OAuth token.[^1]
 
-2) Run the script using Client ID and Client Secret copied from your app's Spotify dashboard:
+2) Fill `.env` from `.env.template`:
+```bash
+cp .env.template .env
+```
+Then set values for `SPOTIFY_USERNAME`, `SPOTIFY_CLIENT_ID`, `SPOTIFY_CLIENT_SECRET`, and `YANDEX_TOKEN`.
+
+3) Run the script:
+```bash
+python3 importer.py
+```
+
+You can still pass arguments explicitly. CLI arguments have priority over `.env` values, for example:
 ```bash
 python3 importer.py --id <spotify_client_id> --secret <spotify_client_secret> -u <spotify_username> -t <yandex_token>
 ```
 
-3) If you don't want to import some items (likes, playlists, albums, artists) you can exclude them by specifying the `-i/--ignore` argument, for example:
+4) If you don't want to import some items (likes, playlists, albums, artists) you can exclude them by specifying the `-i/--ignore` argument, for example:
 ```bash
 python3 importer.py --id <spotify_client_id> --secret <spotify_client_secret> -u <spotify_username> -t <yandex_token> -i playlists albums artists
 ```
 
-4) After launch, script will open the web browser with authorization dialog. After finishing authorization, you need to copy resulting URL, close browser tab and paste that URL after `Enter the URL you were redirected to:`
+5) After launch, script will open the web browser with authorization dialog. After finishing authorization, you need to copy resulting URL, close browser tab and paste that URL after `Enter the URL you were redirected to:`
 
-5) If authorization succeed - you will see log of import process.
+6) If authorization succeed - you will see log of import process.
 
 JSON import is also available. Use `--json-path` or `-j` to specify path to JSON file in format described below.
 ```

@@ -4,7 +4,9 @@ venv/
 .idea
 *.iml
 
-*.pyc
+*.env
 
 .cache*
 /progress.json
+!.env
+/.env
